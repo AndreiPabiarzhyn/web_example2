@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Park Café — Menu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Park Café</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Menu</h1>
+      <p class="muted">Prices are in PLN. Seasonal changes possible.</p>
+
+      <h2>Breakfast</h2>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <div class="info">
+            <h3>Oatmeal with Fruits</h3>
+            <p>Delicate milk-based oatmeal with berries and honey.</p>
+          </div>
+          <div class="price">18</div>
+        </li>
+        <li class="menu-item">
+          <div class="info">
+            <h3>Omelette Sandwich</h3>
+            <p>Toast, soft omelette, cheese, tomato, yogurt sauce.</p>
+          </div>
+          <div class="price">22</div>
+        </li>
+      </ul>
+
+      <h2>Main Dishes</h2>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <div class="info">
+            <h3>Chicken Pasta</h3>
+            <p>Pasta with creamy spinach sauce and chicken fillet.</p>
+          </div>
+          <div class="price">34</div>
+        </li>
+        <li class="menu-item">
+          <div class="info">
+            <h3>Soup of the Day</h3>
+            <p>Seasonal vegetables, homemade broth. Ask the waiter.</p>
+          </div>
+          <div class="price">16</div>
+        </li>
+      </ul>
+
+      <h2>Desserts</h2>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <div class="info">
+            <h3>Vanilla Cheesecake</h3>
+            <p>Served with berry sauce.</p>
+          </div>
+          <div class="price">17</div>
+        </li>
+        <li class="menu-item">
+          <div class="info">
+            <h3>Chocolate Brownie</h3>
+            <p>Rich, with pieces of nuts.</p>
+          </div>
+          <div class="price">15</div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Photos of Our Dishes</h2>
+      <div class="gallery">
+        <img src="images/dish1.jpg" alt="Plate of pasta with spinach and chicken">
+        <img src="images/dish2.jpg" alt="Slice of cheesecake with berry sauce">
+        <img src="images/dish3.jpg" alt="Omelette sandwich on a plate">
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Write to the Owner</h2>
+      <form class="form" action="#" method="post">
+        <label>Name*
+          <input type="text" name="name" required>
+        </label>
+        <label>Message*
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="btn">Send</button>
+        <p class="muted">This form is for demonstration only. A server is needed to send messages.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 · Park Café · City Park • Daily 8:00 AM – 8:00 PM</p>
+    </div>
+  </footer>
+</body>
+</html>
