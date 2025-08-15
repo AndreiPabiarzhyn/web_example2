@@ -1,0 +1,182 @@
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+:root{
+  --bg:#fff8f1;       /* warm background */
+  --panel:#ffffff;    /* cards */
+  --line:#f3e8e0;     /* borders */
+  --text:#1f2937;     /* main text */
+  --muted:#6b7280;    /* secondary text */
+  --accent:#d97706;   /* buttons/links */
+  --radius:14px;
+  --shadow:0 10px 20px rgba(0,0,0,.06);
+}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.6;
+  color:var(--text);
+  background:var(--bg);
+}
+img{max-width:100%;display:block}
+
+/* ===== Layout ===== */
+.container{
+  width:min(100%,1000px);
+  margin:0 auto;
+  padding:16px;
+}
+
+/* ===== Header & Nav ===== */
+.site-header{
+  background:#ffedd5;
+  border-bottom:1px solid #fed7aa;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.brand{
+  font-weight:800;
+  text-decoration:none;
+  color:var(--text);
+  padding:10px 0;
+}
+.nav{display:flex;gap:12px}
+.nav a{
+  text-decoration:none;
+  color:var(--text);
+  padding:8px 12px;
+  border-radius:10px;
+}
+.nav a.active,
+.nav a:hover{background:#ffe7cf}
+
+/* ===== Cards & Helpers ===== */
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow:var(--shadow);
+}
+.muted{color:var(--muted)}
+
+/* ===== Hero (index) ===== */
+.hero{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:16px;
+  align-items:center;
+}
+.hero-text h1{margin:0 0 8px}
+.hero-media img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* ===== Features (index) ===== */
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin:16px 0;
+}
+.feature h2{margin:0 0 6px;font-size:20px}
+
+/* ===== Buttons & Links ===== */
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:10px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+}
+.btn:hover{filter:brightness(1.05)}
+
+/* ===== Menu list (menu.html) ===== */
+.menu-list{
+  list-style:none;
+  margin:0 0 18px;
+  padding:0;
+  display:grid;
+  gap:10px;
+}
+.menu-item{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  border:1px dashed #f1d1b2;
+  border-radius:12px;
+  background:#fffdf9;
+}
+.menu-item h3{margin:0;font-size:18px}
+.menu-item p{margin:6px 0 0;color:var(--muted)}
+.price{font-weight:800;padding-left:10px}
+
+/* ===== Gallery (menu.html) ===== */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:12px;
+}
+.gallery img{
+  grid-column:span 4;
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
+
+/* ===== Form (menu.html) ===== */
+.form{display:grid;gap:10px}
+label{display:grid;gap:6px;font-weight:600}
+input[type="text"],
+textarea{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  font:inherit;
+}
+textarea{
+  resize:none;       /* fixed size */
+  height:120px;      /* adjust if needed */
+}
+button,
+.form .btn{
+  width:fit-content;
+  padding:10px 14px;
+  border:0;
+  border-radius:10px;
+  background:var(--accent);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* ===== Footer ===== */
+.site-footer{
+  color:var(--muted);
+  text-align:center;
+  padding:24px 16px 40px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .features-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .features-grid{grid-template-columns:1fr}
+  .gallery img{grid-column:span 12;height:180px}
+}
