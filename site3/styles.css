@@ -1,0 +1,104 @@
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+:root{
+  --bg:#0ea5e9;      /* saturated blue header background */
+  --bg2:#22d3ee;     /* gradient to turquoise */
+  --page:#0b1220;    /* dark page background */
+  --card:#0f172a;    /* dark cards */
+  --line:#1f2a44;    /* borders */
+  --text:#e5e7eb;    /* light text */
+  --muted:#94a3b8;   /* muted text */
+  --accent:#f59e0b;  /* buttons */
+  --radius:16px;
+  --shadow:0 10px 24px rgba(0,0,0,.25);
+}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--text);
+  background: linear-gradient(180deg, #0a0f1d 0%, #0a1022 100%);
+  line-height:1.6;
+}
+img{max-width:100%;display:block}
+
+/* ===== Container ===== */
+.wrap{width:min(100%,1000px);margin:0 auto;padding:16px}
+
+/* ===== Header (Welcome) ===== */
+.hero{
+  background: linear-gradient(135deg, var(--bg), var(--bg2));
+  padding: 24px 0 12px;
+  color:#031522;
+}
+.hero .wrap{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:16px;
+  align-items:center;
+}
+.intro h1{margin:0 0 8px;font-size:clamp(28px,4vw,42px)}
+.tagline{margin:0 0 12px;font-size:clamp(16px,2.4vw,18px)}
+.portrait img{
+  width:100%; height:320px; object-fit:cover;
+  border-radius:16px; box-shadow:var(--shadow);
+}
+
+/* ===== Cards ===== */
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow);
+  margin:16px 0;
+}
+.card h2{margin:0 0 10px}
+.note{color:var(--muted);font-size:14px}
+
+/* ===== Gallery ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:12px;
+}
+.grid img{
+  grid-column:span 4;
+  height:220px; object-fit:cover;
+  border-radius:14px; box-shadow:var(--shadow);
+}
+
+/* ===== Video (16:9) ===== */
+.video{position:relative; padding-top:56.25%; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); background:#000}
+.video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+
+/* ===== Subscription Form ===== */
+.form{display:grid; gap:12px}
+label{display:grid; gap:6px; font-weight:600}
+input[type="text"], input[type="email"]{
+  width:100%; padding:12px 14px;
+  border:1px solid #27324d; border-radius:12px; font:inherit;
+  background:#0c1326; color:var(--text);
+}
+input:focus{outline:0; box-shadow:0 0 0 3px rgba(34,211,238,.25); border-color:#3dd5e9}
+
+/* ===== Buttons ===== */
+.btn{
+  display:inline-block; width:fit-content;
+  background:linear-gradient(180deg, var(--accent), #fbbf24);
+  color:#1f2937; font-weight:800; text-decoration:none;
+  padding:12px 18px; border-radius:12px; border:0; cursor:pointer;
+}
+.btn:hover{filter:brightness(1.05)}
+
+/* ===== Footer ===== */
+.footer{color:var(--muted); text-align:center; padding:28px 16px 40px}
+
+/* ===== Responsiveness ===== */
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .grid img{grid-column:span 12; height:180px}
+  .portrait img{height:260px}
+}
